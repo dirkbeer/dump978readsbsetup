@@ -23,7 +23,7 @@ Next, you\'ll configure **readsb** to receive the data from
 connection to the port where **dump978-fa** is outputting its data:
 
 ```bash
-readsb \--net-connector 127.0.0.1,30978,raw_in
+readsb --net-connector 127.0.0.1,30978,raw_in
 ```
 This command instructs **readsb** to establish a network connection to
 **127.0.0.1** on port **30978**, expecting raw data as input.
