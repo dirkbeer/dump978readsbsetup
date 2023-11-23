@@ -52,5 +52,6 @@ Try sending data directly from dump978 to readsb:
 ```bash
 readsb --net-only --net-connector 127.0.0.1,30978,raw_in
 ```
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/eed3ba03-7b8f-4b8e-80ba-8a976a041c3a)
 
 
