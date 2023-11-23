@@ -10,7 +10,7 @@ option depending on what data format **readsb** can process. I\'ll use
 the **\--raw-port** for this example:
 
 ```bash
-./dump978-fa \--sdr driver=rtlsdr,serial=00000001 \--raw-port 30978
+./dump978-fa --sdr driver=rtlsdr,serial=00000001 --raw-port 30978
 ```
 This command starts **dump978-fa** with your specified SDR settings and
 makes it listen on port 30978 to provide raw UAT messages.
@@ -23,7 +23,7 @@ Next, you\'ll configure **readsb** to receive the data from
 connection to the port where **dump978-fa** is outputting its data:
 
 ```bash
-readsb --net-connector 127.0.0.1,30978,raw_in
+readsb --net-only --net-connector 127.0.0.1,30978,raw_in
 ```
 This command instructs **readsb** to establish a network connection to
 **127.0.0.1** on port **30978**, expecting raw data as input.
