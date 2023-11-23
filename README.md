@@ -5,6 +5,7 @@ acci:
 * don’t know how well the dongle and software handle it, both tools reading at the same time
 
 https://github.com/flightaware/dump978
+https://github.com/flightaware/dump1090.git
 https://github.com/wiedehopf/readsb
 
 ```bash
@@ -62,3 +63,14 @@ fg
 Ctrl-c
 ```
 
+```bash
+cd
+git clone https://github.com/flightaware/dump1090.git
+cd dump1090
+make
+
+./dump1090 --device-type rtlsdr --net --net-ro-port 30002 &
+```
+```bash
+readsb --net-only --net-connector 127.0.0.1,30002,raw_in
+```
