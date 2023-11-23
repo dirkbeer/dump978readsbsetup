@@ -54,4 +54,11 @@ readsb --net-only --net-connector 127.0.0.1,30978,raw_in
 ```
 ![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/eed3ba03-7b8f-4b8e-80ba-8a976a041c3a)
 
+Works, but not receiving any messages, let's stop this and try using dump1090 instead.
+
+```
+Ctrl-c
+fg
+Ctrl-c
+```
 
