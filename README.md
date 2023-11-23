@@ -68,8 +68,9 @@ cd
 git clone https://github.com/flightaware/dump1090.git
 cd dump1090
 make
-
-./dump1090 --device-type rtlsdr --net --net-ro-port 30002 &
+```
+```bash
+./dump1090 --device-type rtlsdr --net --net-ro-port 30002 > /dev/null 2>&1 &
 ```
 ```bash
 readsb --net-only --net-connector 127.0.0.1,30002,raw_in
