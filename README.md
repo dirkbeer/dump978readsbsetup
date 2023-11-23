@@ -23,6 +23,8 @@ sudo apt-get install \
 cd dump978
 make
 
+sudo systemctl stop readsb
+
 ./dump978-fa --sdr driver=rtlsdr
 ```
 
