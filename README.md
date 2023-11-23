@@ -25,5 +25,15 @@ make
 
 ./dump978-fa --sdr driver=rtlsdr
 
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/eb7fe416-e638-472d-9610-a493dfa4ee1a)
+
+sudo apt install soapysdr-tools
+
+SoapySDRUtil --find
+
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/68c0aa73-6350-4790-b253-7eec707d38bd)
+
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/ce13a27a-ca0f-4538-931e-9cd42bbbcf7a)
+
 
 ```
