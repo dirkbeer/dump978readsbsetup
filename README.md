@@ -28,7 +28,7 @@ sudo systemctl stop readsb
 ./dump978-fa --sdr driver=rtlsdr
 ```
 
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/eb7fe416-e638-472d-9610-a493dfa4ee1a)
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/7a51f102-eb44-45a5-8cf2-ad0fbc1887d4)
 
 ```
 sudo apt install soapysdr-tools
@@ -36,13 +36,12 @@ sudo apt install soapysdr-tools
 SoapySDRUtil --find
 ```
 
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/68c0aa73-6350-4790-b253-7eec707d38bd)
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/20f7aa11-4bc2-4bdc-af70-7c4936883a70)
 
 ```
 ./dump978-fa --sdr driver=rtlsdr,serial=00000001
 ```
 
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/ce13a27a-ca0f-4538-931e-9cd42bbbcf7a)
-
+![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/d44e9429-3882-4d51-8359-ec4134833dc5)
 
 
