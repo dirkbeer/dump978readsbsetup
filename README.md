@@ -1,5 +1,10 @@
 # dump978readsbsetup
 
+acci:
+* You don’t use readsb, you use dump978.  You also have to serialize each dongle and define in readsb and dump978 configs which is used for each.
+* don’t know how well the dongle and software handle it, both tools reading at the same time
+
+https://github.com/flightaware/dump978
 https://github.com/wiedehopf/readsb
 
 ```
