@@ -75,3 +75,7 @@ make
 ```bash
 readsb --net-only --net-connector 127.0.0.1,30002,raw_in
 ```
+
+```bash
+readsb --net-only --net-connector 127.0.0.1,30978,raw_in --lat 32.729124 --lon -116.993730 --max-range 450 --write-json-every 1 --net-connector localhost,30006,json_out --json-location-accuracy 2 --range-outline-hours 24
+``
