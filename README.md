@@ -10,6 +10,7 @@ https://github.com/flightaware/dump1090
 
 https://github.com/wiedehopf/readsb
 
+*How to install dump978*
 ```bash
 git clone https://github.com/flightaware/dump978.git
 
@@ -25,59 +26,48 @@ sudo apt install \
 
 cd dump978
 make
-
-sudo systemctl stop readsb
-
-./dump978-fa --sdr driver=rtlsdr
 ```
 
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/7a51f102-eb44-45a5-8cf2-ad0fbc1887d4)
-
-```bash
-sudo apt install soapysdr-tools
-
-SoapySDRUtil --find
-```
-
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/20f7aa11-4bc2-4bdc-af70-7c4936883a70)
-
-```bash
-./dump978-fa --sdr driver=rtlsdr,serial=00000001
-```
-
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/d44e9429-3882-4d51-8359-ec4134833dc5)
-
-Try sending data directly from dump978 to readsb:
-
-```bash
-./dump978-fa --sdr driver=rtlsdr,serial=00000001 --raw-port 30978 &
-```
-```bash
-readsb --net-only --net-connector 127.0.0.1,30978,raw_in
-```
-![image](https://github.com/dirkbeer/dump978readsbsetup/assets/6425332/eed3ba03-7b8f-4b8e-80ba-8a976a041c3a)
-
-Works, but not receiving any messages, let's stop this and try using dump1090 instead.
-
-```
-Ctrl-c
-fg
-Ctrl-c
-```
-
+*How to install dump1090 (for testing)*
 ```bash
 cd
 git clone https://github.com/flightaware/dump1090.git
 cd dump1090
 make
 ```
+
+*How to find your current devices and get device serial numbers*
+```bash
+sudo apt install soapysdr-tools
+SoapySDRUtil --find
+```
+
+*How to send dump978 output to a specific port, for readsb to read*
+```bash
+./dump978-fa --sdr driver=rtlsdr,serial=00000001 --raw-port 30978 > /dev/null 2>&1 &
+```
+The ambersand at the end sends the command to run in the background so you can keep working in the terminal. Use `fg` to bring it back to the foreground, and then `Ctrl-c` to cancel it.
+
+*How to send dump1090 output to a specific port, for readsb to read*
 ```bash
 ./dump1090 --device-type rtlsdr --net --net-ro-port 30002 > /dev/null 2>&1 &
 ```
+
+*How to find out how readsb is set up by default, and how to control it*
+```bash
+cat /usr/lib/systemd/system/readsb.service
+cat /etc/default/readsb
+sudo systemctl stop readsb
+```
+
+*Simple readsb run for testing*
+Set the port number to match whatever you have dump978 or dump1090 outputting to.
 ```bash
 readsb --net-only --net-connector 127.0.0.1,30002,raw_in
 ```
 
+*Full readsb run*
+Set the port number to match whatever you have dump978 or dump1090 outputting to.
 ```bash
-readsb --net-only --net-connector 127.0.0.1,30978,raw_in --lat 32.729124 --lon -116.993730 --max-range 450 --write-json-every 1 --net-connector localhost,30006,json_out --json-location-accuracy 2 --range-outline-hours 24 --write-json /run/readsb --quiet
-``
+readsb --net-only --net-connector 127.0.0.1,30002,raw_in --lat 32.729124 --lon -116.993730 --max-range 450 --write-json-every 1 --net-connector localhost,30006,json_out --json-location-accuracy 2 --range-outline-hours 24 --write-json /run/readsb --quiet
+```
