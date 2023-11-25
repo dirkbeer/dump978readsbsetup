@@ -40,6 +40,7 @@ make
 ```bash
 sudo apt install soapysdr-tools
 SoapySDRUtil --find
+SoapySDRUtil --probe="driver=rtlsdr"
 ```
 
 *How to send dump978 output to a specific port, for readsb to read*
