@@ -50,7 +50,7 @@ The ambersand at the end sends the command to run in the background so you can k
 
 *How to send dump1090 output to a specific port, for readsb to read*
 ```bash
-./dump1090 --device-type rtlsdr --net --net-ro-port 30002 > /dev/null 2>&1 &
+./dump1090 --device-type rtlsdr --net --net-ro-port 30002 --quiet &
 ```
 
 *How to find out how readsb is set up by default, and how to control it*
@@ -67,7 +67,17 @@ readsb --net-only --net-connector 127.0.0.1,30002,raw_in
 ```
 
 *Full readsb run*
-Set the port number to match whatever you have dump978 or dump1090 outputting to.
 ```bash
-readsb --net-only --net-connector 127.0.0.1,30002,raw_in --lat 32.729124 --lon -116.993730 --max-range 450 --write-json-every 1 --net-connector localhost,30006,json_out --json-location-accuracy 2 --range-outline-hours 24 --write-json /run/readsb --quiet
+sudo nano /etc/default/readsb
+```
+
+```bash
+#RECEIVER_OPTIONS="--device 0 --device-type rtlsdr --gain -10 --ppm 0"
+RECEIVER_OPTIONS="--net-connector 127.0.0.1,30978,raw_in"
+```
+
+
+```bash
+./dump978-fa --sdr driver=rtlsdr,serial=00000001 --raw-port 30978 > /dev/null 2>&1 &
+sudo systemctl restart readsb
 ```
