@@ -5,15 +5,17 @@ acci:
 * don’t know how well the dongle and software handle it, both tools reading at the same time
 
 https://github.com/flightaware/dump978
-https://github.com/flightaware/dump1090.git
+
+https://github.com/flightaware/dump1090
+
 https://github.com/wiedehopf/readsb
 
 ```bash
 git clone https://github.com/flightaware/dump978.git
 
-sudo apt update && sudo apt full-upgradey
+sudo apt update && sudo apt full-upgrade
 
-sudo apt-get install \
+sudo apt install \
   build-essential \
   libboost-system-dev \
   libboost-program-options-dev \
