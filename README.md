@@ -68,6 +68,11 @@ Make sure the serial number matches what you set above, or remove `,serial=42069
 
 This is for testing and will run only as long as your shell is open. The ambersand at the end sends the command to run in the background so you can keep working in the terminal. Use `fg` to bring it back to the foreground, and then `Ctrl-c` to cancel it.
 
+*Configure tar1090 to accept UAT (978)*
+```bash
+sudo nano /etc/default/tar1090
+```
+Install skyaware978? http://cottonmouth.local/skyaware978
 *Restart readsb and look at tar1090 and graphs1090 for the results*
 ```bash
 sudo systemctl restart readsb
